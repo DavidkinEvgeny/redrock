@@ -1,21 +1,111 @@
-{% extends '_base.html' %}
-{% load static %}
+{% extends "_base.html" %}
 
+
+{% load static %}
 
 {% block title %}Главная{% endblock title %}
 
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock head %}
 
 {% block content %}
+<div class="main">
+    <div class="home">
+        <div class="home__title">
+            <h2>Мероприятия</h2>
+        </div>
+        <div class="carusel">
+            <div class="carusel__item">
+                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
+                <div class="carusel__title">
+                    <h4>Международный женский день <span>Сб 7.03</span></h4>
+                </div>
+                <div class="carusel__balance">
+                    <p>Осталось 10 <br> грубаных дней</p>
+                </div>
+            </div>
+            <div class="carusel__item">
+                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
+                <div class="carusel__title">
+                    <h4>Международный женский день <span>Сб 7.03</span></h4>
+                </div>
+                <div class="carusel__balance">
+                    <p>Осталось 10 <br> грубаных дней</p>
+                </div>
+            </div>
+            <div class="carusel__item">
+                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
+                <div class="carusel__title">
+                    <h4>Международный женский день <span>Сб 7.03</span></h4>
+                </div>
+                <div class="carusel__balance">
+                    <p>Осталось 10 <br> грубаных дней</p>
+                </div>
+            </div>
+            <div class="carusel__item">
+                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
+                <div class="carusel__title">
+                    <h4>Международный женский день <span>Сб 7.03</span></h4>
+                </div>
+                <div class="carusel__balance">
+                    <p>Осталось 10 <br> грубаных дней</p>
+                </div>
+            </div>
+        </div>
+        <div class="home__text">
+            <p> УAловите свое руки мощные  вдохновениевкладывает в ваши  творческие инструменты, которые обеспечивают абсолютный контроль над текстом. их помощью вы любым элементам тени,  эффекты с использованием прозрачности. Они позволят вам создавать элегантные таблицы. И не бойтесь экспериментировать у вас всегда ть отменить или выполнить повторно действия.
+                Любая работа в продуктивность работы на всех этапах подготовки публикаций. Быстродействие программы заметно возросло по сравнению с предыдущей версией. Многослойная документов очень удобна для управления объектами. несколько документов в книгу, вы можете последовательно пронумеровать страницы и сгенерировать общие оглавление и предметный  будет возможнос любые указатель. Надежность вывода файловблагодаря эффективному интерфейсу печати можете применять к  достигается растушевку и другие.редактируемые Объединив структура срокповышает 
+                Уловите свое вдохновениевкладывает в ваши руки мощные творческие ин¬струменты, которые обеспечивают  абсолютный контроль над текстом. их помощью вы можете применять к любым элементам тени, растушевку и другие редактируемые эффекты с использованием прозрач</p>
+        </div>
+        <div class="home__title">
+            <h2>Былое</h2>
+        </div>
+        <div class="galery">
+            <div class="galery__item">
+                <a href="#"><img src="{% static 'img/Screenshot_5.jpg' %}" alt=""></a>
+            </div>
+            <div class="galery__item">
+                <a href="#"><img src="{% static 'img/Screenshot_5.jpg' %}" alt=""></a>
+            </div>
+            <div class="galery__item">
+                <a href="#"><img src="{% static 'img/Screenshot_5.jpg' %}" alt=""></a>
+            </div>
+            <div class="galery__item">
+                <a href="#"><img src="{% static 'img/Screenshot_5.jpg' %}" alt=""></a>
+            </div>
+            <div class="galery__item">
+                <a href="#"><img src="{% static 'img/Screenshot_5.jpg' %}" alt=""></a>
+            </div>
+            <div class="galery__item">
+                <a href="#"><img src="{% static 'img/Screenshot_5.jpg' %}" alt=""></a>
+            </div>
+            <div class="galery__item">
+                <a href="#"><img src="{% static 'img/Screenshot_5.jpg' %}" alt=""></a>
+            </div>
+            <div class="galery__item">
+                <a href="#"><img src="{% static 'img/Screenshot_5.jpg' %}" alt=""></a>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h1>Главная</h1>
-<img src="{% static 'img/logo.png' %}" alt="">
-{% if user.is_authenticated %}
-    Привет {{ user.email }}!
-    <p><a href="{% url 'account_logout' %}">Выход</a></p>
-{% else %}
-    <p>Вы не зарегистрированны</p>
-    <a href="{% url 'account_login' %}">Вход</a>
-    <a href="{% url 'account_signup' %}">Регистрация</a>
-{% endif %}
-    
+
 {% endblock content %}
+
+
+{% block javascript %}
+<script>
+    $(document).ready(function(){
+        $('.carusel').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            prevArrow: '<div class="slick-prev"><img src="{% static "img/arrowLeft.png" %}"></div>',
+            nextArrow: '<div class="slick-next"><img src="{% static "img/arrowRight.png" %}"></div>', 
+        });
+    });
+</script>
+{% endblock javascript %}

@@ -1,0 +1,31 @@
+.event__title {
+    margin-top: 120px;
+}
+.event__title > h2 {
+    text-align: center;
+}
+.event__item {
+    display: block;
+    height: 350px;
+    margin-top: 80px;
+}
+.event__item > img {
+    float: left;
+    width: 550px;
+    height: 350px;
+    margin-right: 60px;
+    margin-left: 20px;
+}
+.event__item > h4 {
+    margin-bottom: 30px;
+    
+}
+.event__item > h4 > span {
+    display: block;
+    font-weight: normal;
+    font-size: 18px;
+    margin-top: 10px;
+}
+.event__item > p {
+    padding: 0 20px 0 0;
+}

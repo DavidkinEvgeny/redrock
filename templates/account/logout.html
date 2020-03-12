@@ -1,16 +1,30 @@
 {% extends '_base.html' %}
 
+{% load static %}
 
 {% block title %}Выход{% endblock %}
 
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/logout.css' %}">
+{% endblock head %}
+
 {% block content %}
 
-<h2>Выход</h2>
-<p>Вы уверены, что хотите выйти?</p>
-<form method="post" action="{% url 'account_logout' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Выход</button>
-</form>
+<div class="logout">
+    <div class="logout__title">
+        <h2>Выход</h2>
+    </div>
+    <div class="logout__box">
+        <div class="logout__form">
+            <p>Вы уверены, что хотите выйти?</p>
+            <form method="post" action="{% url 'account_logout' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Выход</button>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 {% endblock content %}

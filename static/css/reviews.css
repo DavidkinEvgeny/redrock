@@ -1,0 +1,48 @@
+.review__title {
+    margin-top: 120px;
+}
+.review__title > h2 {
+    text-align: center;
+}
+.review__you {
+    display: block;
+    height: 350px;
+    margin-top: 80px;
+}
+.review__you > img {
+    float: left;
+    width: 350px;
+    height: 350px;
+    margin-right: 60px;
+    margin-left: 140px;
+    border-radius: 50%;
+}
+.review__you > h4 {
+    margin-bottom: 20px;
+}
+.review__you > textarea {
+    width: 1160px;
+    height: 120px;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+.review__item {
+    display: block;
+    height: 350px;
+    margin-top: 80px;
+}
+.review__item > img {
+    float: left;
+    width: 350px;
+    height: 350px;
+    margin-right: 60px;
+    margin-left: 140px;
+    border-radius: 50%;
+}
+.review__item > h4 {
+    margin-bottom: 20px;
+}
+.review__item > p {
+    padding: 0 140px 0 0;
+    margin-bottom: 40px;
+}

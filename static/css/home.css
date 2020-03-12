@@ -1,0 +1,69 @@
+
+.carusel__title {
+    position: absolute;
+    display: block;
+    width: 280px;
+    bottom: 80px;
+    left: 180px;
+    text-align: center;
+}
+.carusel__balance {
+    position: absolute;
+    display: block;
+    width: 280px;
+    top: 20px;
+    right: 70px;
+    text-align: end;
+}
+.carusel__item {
+    position: relative;
+    display: block;
+    color: red;
+    text-shadow: 3px 3px 2px black;
+}
+.carusel__item > img {
+    display: block;
+    margin: 0 auto;
+    width: 550px;
+    height: 350px;
+}
+.home__title {
+        text-align: center;
+        margin: 80px 0 80px;
+    }
+.home__text {
+    display: block;
+    width: 1240px;
+    margin: 120px auto 0;
+}
+.galery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 40px;
+}
+.galery__item {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.galery__item > a > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 340px;
+}
+.slick-prev {
+    position: absolute;
+    bottom: -80px;
+    left: 800px;
+}
+.slick-next {
+    position: absolute;
+    bottom: -80px;
+    right: 800px;
+}

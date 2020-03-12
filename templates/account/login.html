@@ -1,16 +1,30 @@
 {% extends '_base.html' %}
 
+{% load static %}
 
 {% block title %}Вход{% endblock title %}
 
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock head %}
 
 {% block content %}
 
-<h2>Вход</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Вход</button>
-</form>
+<div class="login">
+    <div class="login__title">
+        <h2>Вход</h2>
+    </div>
+    <div class="login__box">
+        <div class="login__form">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Вход</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
 
 {% endblock content %}
