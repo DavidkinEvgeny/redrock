@@ -1,0 +1,60 @@
+{% extends "_base.html" %}
+
+
+{% load static %}
+
+{% block title %}{{ party.title }}{% endblock title %}
+
+
+{% block content %}
+
+<div class="detail">
+    <div class="detail__item">
+        <div class="detail__imgBox">
+            <img src="{{ party.preview.url }}" alt="{{ party.title }}">
+        </div>
+        <h2>{{ party.title }}<span>{{ party.event_date }}</span></h2>
+        <p>{{ party.text_before }}</p>
+    </div>
+    <div class="album">
+        {% for album in party.album_set.all %}
+        <a href="{{ album.photo.url }}" class="popup-link album__imgBox"><img class="album__preview" src="{{ album.photo.url }}" alt=""></a>
+        {% endfor %}
+
+
+    </div>
+</div>
+
+{% endblock content %}
+
+
+{% block javascript %}
+<script>
+$(document).ready(function() {
+	$('.album').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		closeOnContentClick: false,
+		closeBtnInside: false,
+		mainClass: 'mfp-with-zoom mfp-img-mobile',
+        next: '<img src="./img/arrowLeft.png">',
+        tNext: '<img src="./img/arrowLeft.png">',
+		gallery: {
+			enabled: true,
+            tPrev: 'Назад', // Alt text on left arrow
+            tNext: 'Вперед',
+            tClose: 'Закрыть',
+            arrowMarkup: '<img class="mfp-arrow magnificArrow mfp-arrow-%dir%" src="../img/arrowLeft.png">',
+		},
+		zoom: {
+			enabled: true,
+			duration: 300, // don't foget to change the duration also in CSS
+			opener: function(element) {
+				return element.find('img');
+			}
+		}
+		
+	});
+})
+</script>
+{% endblock javascript %}

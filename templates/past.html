@@ -6,154 +6,34 @@
 {% block title %}Былое{% endblock title %}
 
 {% block head %}
+    <!-- Подключаем jQuery и Magnific-popup -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
+
     <link rel="stylesheet" href="{% static 'css/past.css' %}">
 {% endblock head %}
 
 {% block content %}
+
 <div class="past">
     <div class="past__title">
         <h2>Былое</h2>
     </div>
-    <div class="past__content">
-        <div class="past__item-main">
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-title">
-                <h3> Старый Новый Год <span>11.01.2020 г</span></h3>
-            </div>
+    {% for party in party_list %}
+        <div class="past__item">
+            <a href="{% url 'detail' party.id %}">
+                <div class="past__imgBox">
+                    <img src="{{ party.preview.url }}" alt="{{ party.title }}">
+                </div>
+            </a>
+            <a href="{% url 'detail' party.id %}"><h4>{{ party.title }} <span>{{ party.event_date }}</span></h4></a>
+            <p> {{ party.text_before }}</p>
+            <p><a href="{% url 'detail' party.id %}">Смотреть альбом</a></p>
         </div>
-        <div class="past__item-main">
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-title">
-                <h3> Старый Новый Год <span>11.01.2020 г</span></h3>
-            </div>
-        </div>
-        <div class="past__item-main">
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-title">
-                <h3> Старый Новый Год <span>11.01.2020 г</span></h3>
-            </div>
-        </div>
-        <div class="past__item-main">
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-slave">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-            </div>
-            <div class="past__item-title">
-                <h3> Старый Новый Год <span>11.01.2020 г</span></h3>
-            </div>
-        </div>
-    </div>
-    <div class="past__paginator">
-        <ul>
-            <li> <a href="#">1</a></li>
-            <li> <a href="#">2</a></li>
-            <li class="active"><a href="#">3</a></li>
-            <li> <a href="#">4</a></li>
-            <li> <a href="#">5</a></li>
-        </ul>
-        <a href="#" class="paginator__left"><img src="{% static 'img/arrowLeft.png' %}"></a>
-        <a href="#"class="paginator__right"><img src="{% static 'img/arrowRight.png' %}"></a>
-    </div>
+    {% endfor %}
+
 </div>
+
 {% endblock content %}
+

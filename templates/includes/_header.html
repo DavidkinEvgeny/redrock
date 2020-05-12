@@ -1,0 +1,70 @@
+{% load static %}
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="header__logo">
+                <img src="{% static 'img/logo.png' %}" alt="RedRock">
+            </div>
+            <div class="header__work">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Вт</th>
+                            <th>Ср</th>
+                            <th>Чт</th>
+                            <th>Пт</th>
+                            <th>Сб</th>
+                            <th>Вс</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>19.00</th>
+                            <th>19.00</th>
+                            <th>19.00</th>
+                            <th>19.00</th>
+                            <th>19.00</th>
+                            <th>19.00</th>
+                        </tr>
+                        <tr>
+                            <th>01.00</th>
+                            <th>01.00</th>
+                            <th>01.00</th>
+                            <th>03.00</th>
+                            <th>03.00</th>
+                            <th>01.00</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="header__contact">
+                <div class="header__phone">
+                    <p><a href="tel:+79093722772">+7(909)372-27-72</a></p>
+                </div>
+                <div class="header__social">
+                    <p><a href="https://www.instagram.com/bar_redrock/" target="_blank"><i class="fab fa-instagram"></i></a></p>
+                    <p><a href="https://m.vk.com/bar_redrock" target="_blank"><i class="fab fa-vk"></i></a></p>
+                </div>
+            </div>
+            <div class="header__menu">
+                <ul>
+                    <li><a href="{% url 'home' %}">Главная</a></li>
+                    <li><a href="{% url 'about' %}">О нас</a></li>
+                    <li><a href="{% url 'event' %}">Мероприятия</a></li>
+                    <li><a href="{% url 'past' %}">Былое</a></li>
+                    <li><a href="{% url 'reviews' %}">Отзывы</a></li>
+                    <li><a href="{% url 'drink' %}">Бухашечка</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="header__authorization">
+            <p>
+                {% if user.is_authenticated %}
+                {{ user.username }}!
+                <a href="{% url 'account_logout' %}">Выйти</a>
+            {% else %}
+                <a href="{% url 'account_login' %}">Вход</a>
+                <a href="{% url 'account_signup' %}">Регистрация</a>
+            {% endif %}</p>
+        </div>

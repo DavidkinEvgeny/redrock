@@ -3,55 +3,48 @@
 
 {% load static %}
 
+
 {% block title %}Главная{% endblock title %}
 
+
 {% block head %}
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <!-- Подключаем jQuery и slick-slider -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 {% endblock head %}
 
+
 {% block content %}
-<div class="main">
+<main>
     <div class="home">
-        <div class="home__title">
-            <h2>Мероприятия</h2>
-        </div>
+
+            <div class="home__title">
+                <h2>Мероприятия</h2>
+            </div>
+
         <div class="carusel">
+            
+            {% for party in party_list %}
+            {% if party.was_published == 'event_day' %}
+                    
             <div class="carusel__item">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-                <div class="carusel__title">
-                    <h4>Международный женский день <span>Сб 7.03</span></h4>
-                </div>
-                <div class="carusel__balance">
-                    <p>Осталось 10 <br> грубаных дней</p>
-                </div>
-            </div>
-            <div class="carusel__item">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-                <div class="carusel__title">
-                    <h4>Международный женский день <span>Сб 7.03</span></h4>
-                </div>
-                <div class="carusel__balance">
-                    <p>Осталось 10 <br> грубаных дней</p>
-                </div>
-            </div>
-            <div class="carusel__item">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-                <div class="carusel__title">
-                    <h4>Международный женский день <span>Сб 7.03</span></h4>
-                </div>
-                <div class="carusel__balance">
-                    <p>Осталось 10 <br> грубаных дней</p>
-                </div>
-            </div>
-            <div class="carusel__item">
-                <img src="{% static 'img/Screenshot_5.jpg' %}" alt="">
-                <div class="carusel__title">
-                    <h4>Международный женский день <span>Сб 7.03</span></h4>
-                </div>
-                <div class="carusel__balance">
-                    <p>Осталось 10 <br> грубаных дней</p>
-                </div>
-            </div>
+                <a href="{% url 'event' %}">
+                    <div class="carusel__imgBox">
+                        <img src="{{ party.preview.url }}" alt="{{ party.title }}">
+                    </div>
+                    <div class="carusel__title">
+                        <h4>{{ party.title }}<br/><span>{{ party.event_date }}</span></h4>
+                    </div>
+                    <div class="carusel__balance">
+                        <p>Осталось 10 <br> грёбаных дней</p>
+                    </div>
+                </a>
+            </div> 
+            {% endif %}
+            {% endfor %}
+
+
         </div>
         <div class="home__text">
             <p> УAловите свое руки мощные  вдохновениевкладывает в ваши  творческие инструменты, которые обеспечивают абсолютный контроль над текстом. их помощью вы любым элементам тени,  эффекты с использованием прозрачности. Они позволят вам создавать элегантные таблицы. И не бойтесь экспериментировать у вас всегда ть отменить или выполнить повторно действия.
@@ -61,34 +54,20 @@
         <div class="home__title">
             <h2>Былое</h2>
         </div>
+
         <div class="galery">
+            
+            {% for party in party_list %}
+            {% if party.was_published == 'past_day' %}
             <div class="galery__item">
-                <a href="#"><img src="{% static 'img/Screenshot_5.jpg' %}" alt=""></a>
+                <a href="{% url 'detail' party.id %}"><img src="{{ party.preview.url }}" alt="{{ party.title }}"></a>
             </div>
-            <div class="galery__item">
-                <a href="#"><img src="{% static 'img/Screenshot_5.jpg' %}" alt=""></a>
-            </div>
-            <div class="galery__item">
-                <a href="#"><img src="{% static 'img/Screenshot_5.jpg' %}" alt=""></a>
-            </div>
-            <div class="galery__item">
-                <a href="#"><img src="{% static 'img/Screenshot_5.jpg' %}" alt=""></a>
-            </div>
-            <div class="galery__item">
-                <a href="#"><img src="{% static 'img/Screenshot_5.jpg' %}" alt=""></a>
-            </div>
-            <div class="galery__item">
-                <a href="#"><img src="{% static 'img/Screenshot_5.jpg' %}" alt=""></a>
-            </div>
-            <div class="galery__item">
-                <a href="#"><img src="{% static 'img/Screenshot_5.jpg' %}" alt=""></a>
-            </div>
-            <div class="galery__item">
-                <a href="#"><img src="{% static 'img/Screenshot_5.jpg' %}" alt=""></a>
-            </div>
+            {% endif %}
+            {% endfor %}
+
         </div>
     </div>
-</div>
+</main>
 
 
 {% endblock content %}

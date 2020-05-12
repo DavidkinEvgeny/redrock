@@ -13,6 +13,7 @@ body {
     margin: 0;
     padding:0;
     font-size: 18px;
+    background: url('/static/img/wall.png');
 }
 h1 {
     font-size: 36px;
@@ -27,7 +28,11 @@ h4 {
     font-size: 24px;
 }
 
-/* Стилизация шапки */
+/* 
+============================================
+Стилизация шапки 
+============================================
+*/
 .header {
     width: 100%;
     height: 300px;
@@ -143,7 +148,11 @@ h4 {
     color: #ffffff;
 }
 
-/* Стилизация подвала */
+/*
+============================================
+Стилизация подвала
+============================================
+*/
 .footer {
     margin-top: 120px;
     position: relative;
@@ -176,3 +185,343 @@ h4 {
 .footer__contact > p > a > i {
     font-size: 36px;
 }
+
+/*
+============================================
+Страница home
+============================================
+*/
+.carusel__title {
+    position: absolute;
+    display: block;
+    width: 280px;
+    bottom: 80px;
+    left: 180px;
+    text-align: center;
+}
+.carusel__balance {
+    position: absolute;
+    display: block;
+    width: 280px;
+    top: 20px;
+    right: 70px;
+    text-align: end;
+}
+.carusel__item {
+    position: relative;
+    display: block;
+    color: red;
+    text-shadow: 3px 3px 2px black;
+}
+.carusel__imgBox {
+    position: relative;
+    width: 95%;
+    height: 350px;
+    overflow: hidden;
+}
+.carusel__imgBox > img {
+    width: 105%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.home__title {
+        text-align: center;
+        margin: 80px 0 80px;
+    }
+.home__text {
+    display: block;
+    width: 1240px;
+    margin: 120px auto 0;
+}
+.galery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 40px;
+}
+.galery__item {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.galery__item > a > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 340px;
+}
+.slick-prev {
+    position: absolute;
+    bottom: -80px;
+    left: 800px;
+}
+.slick-next {
+    position: absolute;
+    bottom: -80px;
+    right: 800px;
+}
+
+/*
+============================================
+Страница about
+============================================
+*/
+.about__title {
+    margin-top: 120px;
+}
+.about__title > h2 {
+    text-align: center;
+}
+.about__item {
+    position: relative;
+    display: block;
+    height: 350px;
+    margin-top: 80px;
+}
+.about__item > p {
+    padding: 0 20px 0 0;
+}
+.about__item-right > p {
+    padding: 0 0 0 20px;
+}
+.about__imgBox {
+    position: relative;
+    float: left;
+    width: 550px;
+    height: 350px;
+    margin-right: 60px;
+    margin-left: 20px;
+    overflow: hidden;
+}
+.about__imgBox-right {
+    position: absolute;
+    right: 0;
+    position: relative;
+    float: right;
+    width: 550px;
+    height: 350px;
+    margin-right: 60px;
+    margin-left: 20px;
+    overflow: hidden;
+}
+.about__imgBox > img {
+    width: 550px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.about__imgBox-right > img {
+    margin-right: 20px;
+    margin-left: 60px;
+}
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 400px;
+    grid-template-areas: "title title"
+                          "item map";
+}
+.contact__title {
+    grid-area: title;
+    margin: 120px 0 80px;
+}
+.contact__title > h2 {
+    text-align: center;
+}
+.contact__item {
+    grid-area: item;
+}
+.contact__item > p {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 40px;
+    margin-left: 20px;
+}
+.contact__item > p > a {
+    text-decoration: none;
+    color: black;
+}
+.contact__map {
+    grid-area: map;
+}
+.contact__map > iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/*
+============================================
+Страница event
+============================================
+*/
+.event__title {
+    margin-top: 120px;
+}
+.event__title > h2 {
+    text-align: center;
+}
+.event__item {
+    display: block;
+    min-height: 350px;
+    margin-top: 80px;
+}
+.event__item > h4 {
+    margin-bottom: 30px;
+}
+.event__item > h4 > span {
+    display: block;
+    font-weight: normal;
+    font-size: 18px;
+    margin-top: 10px;
+}
+.event__item > p {
+    padding: 0 20px 0 0;
+}
+.event__imgBox {
+    position: relative;
+    float: left;
+    width: 550px;
+    height: 350px;
+    margin-right: 60px;
+    margin-left: 20px;
+    overflow: hidden;
+}
+.event__imgBox > img {
+    width:550px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*
+============================================
+Страница past
+============================================
+*/
+.past__title {
+    margin-top: 120px;
+}
+.past__title > h2 {
+    text-align: center;
+}
+.past__item {
+    display: block;
+    height: 350px;
+    margin-top: 80px;
+}
+.past__item > a {
+    text-decoration: none;
+}
+.past__item > a > h4 {
+    margin-bottom: 30px;
+    color: black;
+}
+.past__item > a > h4 > span {
+    display: block;
+    font-weight: normal;
+    font-size: 18px;
+    margin-top: 10px;
+}
+.past__item > p {
+    padding: 0 20px 0 0;
+    margin-bottom: 30px;
+}
+.past__item > p > a {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+}
+.past__imgBox {
+    position: relative;
+    width: 550px;
+    height: 350px;
+    float: left;
+    margin-right: 60px;
+    margin-left: 20px;
+    overflow: hidden;
+}
+.past__imgBox > img {
+    width: 550px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*
+============================================
+Страница past
+============================================
+*/
+.detail__item {
+    margin-top: 120px;
+    display: block;
+    width: 100%;
+    min-height: 400px;
+}
+.detail__item > h2 {
+    margin-bottom: 30px;
+}
+.detail__imgBox {
+    position: relative;
+    width: 550px;
+    height: 350px;
+    float: left;
+    margin-right: 60px;
+    margin-left: 20px;
+    overflow: hidden;
+} 
+.detail__imgBox > img {
+    width: 550px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.album {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.album__imgBox {
+    display: block;
+    margin: 20px auto;
+    position: relative;
+    width: 350px;
+    height: 250px;
+    overflow: hidden;
+}
+.album__preview {
+    width: 450px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* .mfp-arrow-left {
+    width: 96px;
+    height: 51px;
+}
+.mfp-arrow-right {
+    width: 96px;
+    height: 51px;
+    transform: rotateZ(180deg);
+} */
+
+
+
+
+
+

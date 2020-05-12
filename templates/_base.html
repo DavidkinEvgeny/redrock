@@ -1,110 +1,35 @@
-{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+{% load static %}
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> {% block title %} RedRock {% endblock title %} </title>
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>RedRock - {% block title %}{% endblock title %} </title>
+
+    {% block head %}
+
+    {% endblock head %}
+
     <!-- Подключаем иконки -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <!-- Подключаем jQuery и slick-slider -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-{% block head %}
-  
-{% endblock head %}
-</head>
-<body style='background: url({% static "img/wall.png" %}'>
-    <div class="wrap">
-        <div class="header">
-            <div class="header__logo">
-                <img src="{% static 'img/logo.png' %}" alt="RedRock">
-            </div>
-            <div class="header__work">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Вт</th>
-                            <th>Ср</th>
-                            <th>Чт</th>
-                            <th>Пт</th>
-                            <th>Сб</th>
-                            <th>Вс</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>19.00</th>
-                            <th>19.00</th>
-                            <th>19.00</th>
-                            <th>19.00</th>
-                            <th>19.00</th>
-                            <th>19.00</th>
-                        </tr>
-                        <tr>
-                            <th>01.00</th>
-                            <th>01.00</th>
-                            <th>01.00</th>
-                            <th>03.00</th>
-                            <th>03.00</th>
-                            <th>01.00</th>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="header__contact">
-                <div class="header__phone">
-                    <p><a href="tel:+79093722772">+7(909)372-27-72</a></p>
-                </div>
-                <div class="header__social">
-                    <p><a href="https://www.instagram.com/bar_redrock/" target="_blank"><i class="fab fa-instagram"></i></a></p>
-                    <p><a href="https://m.vk.com/bar_redrock" target="_blank"><i class="fab fa-vk"></i></a></p>
-                </div>
-            </div>
-            <div class="header__menu">
-                <ul>
-                    <li><a href="{% url 'home' %}">Главная</a></li>
-                    <li><a href="{% url 'about' %}">О нас</a></li>
-                    <li><a href="{% url 'event' %}">Мероприятия</a></li>
-                    <li><a href="{% url 'past' %}">Былое</a></li>
-                    <li><a href="{% url 'reviews' %}">Отзывы</a></li>
-                    <li><a href="{% url 'drink' %}">Бухашечка</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="header__authorization">
-            <p>
-                {% if user.is_authenticated %}
-                {{ user.username }}!
-                <a href="{% url 'account_logout' %}">Выйти</a>
-            {% else %}
-                <a href="{% url 'account_login' %}">Вход</a>
-                <a href="{% url 'account_signup' %}">Регистрация</a>
-            {% endif %}</p>
-        </div>
-
-        {% block content %}
-          
-        {% endblock content %}
-
-        <div class="footer">
-            <div class="footer__copy">
-                <p>&copy 2018-2020 RedRock</p>
-            </div>
-            <div class="footer__contact">
-                <p><a href="tel:+79093722772"><i class="fas fa-phone"></i></i></a></p>
-                <p><a href="https://www.instagram.com/bar_redrock/" target="_blank"><i class="fab fa-instagram"></i></a></p>
-                <p><a href="https://m.vk.com/bar_redrock" target="_blank"><i class="fab fa-vk"></i></a></p>
-            </div>
-        </div>
-    </div>
+    <!-- Подключаем свои стили -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
 
-    {% block javascript %}
-        <script src="{% static 'js/base.js' %}"></script>
-    {% endblock javascript %}
+{% include "includes/_header.html" %}
+
+
+{% block content %}
+
+{% endblock content %}
+
+
+{% include "includes/_footer.html" %}
+
+
+{% block javascript %}
+    <script src="{% static 'js/base.js' %}"></script>
+{% endblock javascript %}
 
 
 </body>
